@@ -35,3 +35,16 @@ end
 ~~~
 
 既に定義されているクラスと同名のクラスがネストされている場合、autoloadすることはできない
+
+## 解決方法
+
+* autoload せずに require する
+* もしくは名前替える
+
+rails の場合は config/initializer/before_autoload.rb のようなファイルを作って
+
+~~~
+require 'post/twitter'
+~~~
+
+のようにするとうまくいく
